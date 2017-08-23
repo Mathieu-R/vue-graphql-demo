@@ -91,18 +91,24 @@ const athletes = [
 ];
 
 Athlete.insertMany(athletes).then(athls => {
-  console.log(athls)
-  const perfsOfTheYear = athls.reduce(acc, athl => {
+  const perfsOfTheYear = athls.reduce((acc, athl) => {
     for (const perf of athl.sb) {
-      if (acc[field] === 'undefined') {
+      const field = perf['field'];
+      if (!acc[field]) {
         acc[field] = [athl._id];
       } else {
         acc[field].push(athl._id);
       }
     }
+    return acc;
   }, {});
 
+  console.log(perfsOfTheYear);
+
   for (const perf in perfsOfTheYear) {
-    Performance.insert({'field': perf, 'athletes': perfsOfTheYear[perf]});
+    const p = new Performance({'field': perf, 'athletes': perfsOfTheYear[perf]});
+    p.save().catch(err => console.log(err));
   }
 }).catch(err => console.log(err));
+
+process.exit(0);

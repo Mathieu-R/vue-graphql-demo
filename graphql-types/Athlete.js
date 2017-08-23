@@ -1,25 +1,35 @@
-import {
+const {
   graphql,
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLID,
   GraphQLString,
   GraphQLInt,
   GraphQLList,
-} from 'graphql';
+} = require('graphql');
 
-import {
+const {
   GraphQLDate
-} from 'graphql-iso-date';
+} = require('graphql-iso-date');
+
+const Perf = new GraphQLObjectType({
+  name: 'Perf',
+  fields: {
+    field: {type: GraphQLString},
+    perf: {type: GraphQLInt}
+  }
+});
 
 const Athlete = new GraphQLObjectType({
   name: 'Athlete',
   fields: {
+    _id: {type: GraphQLID},
     firstname: {type: GraphQLString},
     lastname: {type: GraphQLString},
     country: {type: GraphQLString},
     birth: {type: GraphQLDate},
-    sb: {type: GraphQLList},
-    pb: {type: GraphQLList}
+    sb: {type: new GraphQLList(Perf)},
+    pb: {type: new GraphQLList(Perf)}
   }
 });
 

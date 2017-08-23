@@ -1,19 +1,21 @@
-import {
+const {
   graphql,
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLID,
   GraphQLString,
   GraphQLInt,
   GraphQLList
-} from 'graphql';
+} = require('graphql');
 
-import Athlete from './Athlete';
+const Athlete = require('./Athlete');
 
 const Performance = new GraphQLObjectType({
   name: 'Performance',
   fields: {
-    field: GraphQLString,
-    athletes: GraphQLList
+    _id: {type: GraphQLID},
+    field: {type: GraphQLString},
+    athletes: {type: new GraphQLList(Athlete)}
   }
 });
 

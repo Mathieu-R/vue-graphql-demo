@@ -6,7 +6,7 @@ const {createBundleRenderer} = require('vue-server-renderer');
 const serverBundleJSON = require('./dist/vue-ssr-server-bundle.json');
 const clientManifestJSON = require('./dist/vue-ssr-client-manifest.json');
 const template = fs.readFileSync('./src/index.hbs', 'utf-8');
-const schema = require('./graphql-models/schema');
+const schema = require('./graphql-types/schema');
 const production = process.env.NODE_ENV === 'production';
 const app = express();
 

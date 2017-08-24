@@ -29,9 +29,12 @@
   "homepage": "https://github.com/Mathieu-R/vue-graphql-demo#readme",
   "dependencies": {
     "apollo-client": "^1.9.1",
+    "apollo-server-express": "^1.1.2",
+    "body-parser": "^1.17.2",
     "express-graphql": "^0.6.7",
     "graphql": "^0.10.5",
     "graphql-iso-date": "^3.2.0",
+    "graphql-tools": "^1.2.1",
     "mongoose": "^4.11.7",
     "vue": "^2.4.2",
     "vue-apollo": "^2.1.0-beta.21",

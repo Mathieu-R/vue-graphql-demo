@@ -1,28 +1,31 @@
 const http = require('http');
 const express = require('express');
-const expressGraphql = require('express-graphql');
+const {graphqlExpress, graphiqlExpress} = require('apollo-server-express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const {createBundleRenderer} = require('vue-server-renderer');
 const serverBundleJSON = require('./dist/vue-ssr-server-bundle.json');
 const clientManifestJSON = require('./dist/vue-ssr-client-manifest.json');
 const template = fs.readFileSync('./src/index.hbs', 'utf-8');
-const schema = require('./graphql-types/schema');
+const schema = require('./graphql/schema');
 const production = process.env.NODE_ENV === 'production';
 const app = express();
 
 app.use('/dist', express.static('./dist'));
+app.use(bodyParser.json());
+
+app.use('/graphql', graphqlExpress({
+  schema,
+  pretty: true
+}));
+
+app.use('/graphql-ui', graphiqlExpress({endpointURL: '/graphql'}));
 
 const renderer = createBundleRenderer(serverBundleJSON, {
   runInNewContext: false, // recommended
   template, // optional
   clientManifestJSON // optional
 });
-
-app.use('/graphql', expressGraphql({
-  schema,
-  pretty: true,
-  graphiql: !production,
-}));
 
 app.get('*', (req, res) => {
   const ctx = {url : req.url};

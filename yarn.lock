@@ -6,6 +6,10 @@
   version "0.10.2"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.10.2.tgz#d7c79acbaa17453b6681c80c34b38fcb10c4c08c"
 
+"@types/graphql@^0.9.0":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.9.4.tgz#cdeb6bcbef9b6c584374b81aa7f48ecf3da404fa"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
@@ -119,6 +123,29 @@ apollo-link-core@^0.5.0:
     graphql "^0.10.3"
     graphql-tag "^2.4.2"
     zen-observable-ts "^0.4.0"
+
+apollo-server-core@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-1.1.0.tgz#74c3bf4394e14eae7ab60b1d999a3c5b8aa94e9a"
+  dependencies:
+    apollo-tracing "^0.0.7"
+
+apollo-server-express@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/apollo-server-express/-/apollo-server-express-1.1.2.tgz#6933c77fe5dfb9a7f30dd393239ad9953a613cd9"
+  dependencies:
+    apollo-server-core "^1.1.0"
+    apollo-server-module-graphiql "^1.1.2"
+
+apollo-server-module-graphiql@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/apollo-server-module-graphiql/-/apollo-server-module-graphiql-1.1.2.tgz#49a154cf80e984acb082bd0096175b561e1bfbcc"
+
+apollo-tracing@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/apollo-tracing/-/apollo-tracing-0.0.7.tgz#78466cfefdb52a0802a57b488d26a1a67a25909f"
+  dependencies:
+    graphql-tools "^1.1.0"
 
 aproba@^1.0.3:
   version "1.1.2"
@@ -1034,6 +1061,21 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.7"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.7.tgz#ddb048e50d9482790094c13eb3fcfc833ce7ab46"
 
+body-parser@^1.17.2:
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.17.2.tgz#f8892abc8f9e627d42aedafbca66bf5ab99104ee"
+  dependencies:
+    bytes "2.4.0"
+    content-type "~1.0.2"
+    debug "2.6.7"
+    depd "~1.1.0"
+    http-errors "~1.6.1"
+    iconv-lite "0.4.15"
+    on-finished "~2.3.0"
+    qs "6.4.0"
+    raw-body "~2.2.0"
+    type-is "~1.6.15"
+
 bonjour@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bonjour/-/bonjour-3.5.0.tgz#8e890a183d8ee9a2393b3844c691a42bcf7bc9f5"
@@ -1174,6 +1216,10 @@ builtin-status-codes@^3.0.0:
 bytes@2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.3.0.tgz#d5b680a165b6201739acb611542aabc2d8ceb070"
+
+bytes@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
 
 bytes@2.5.0:
   version "2.5.0"
@@ -1749,6 +1795,10 @@ depd@1.1.0, depd@~1.1.0:
 depd@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
+
+deprecated-decorator@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/deprecated-decorator/-/deprecated-decorator-0.1.6.tgz#00966317b7a12fe92f3cc831f7583af329b86c37"
 
 des.js@^1.0.0:
   version "1.0.0"
@@ -2421,6 +2471,15 @@ graphql-tag@^2.0.0, graphql-tag@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.4.2.tgz#6a63297d8522d03a2b72d26f1b239aab343840cd"
 
+graphql-tools@^1.1.0, graphql-tools@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-1.2.1.tgz#8d462abaa7b0f3bb2aa633df1e7a848720197671"
+  dependencies:
+    deprecated-decorator "^0.1.6"
+    uuid "^3.0.1"
+  optionalDependencies:
+    "@types/graphql" "^0.9.0"
+
 graphql@^0.10.0, graphql@^0.10.3, graphql@^0.10.5:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.10.5.tgz#c9be17ca2bdfdbd134077ffd9bbaa48b8becd298"
@@ -2657,6 +2716,10 @@ http-signature@~1.1.0:
 https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
+
+iconv-lite@0.4.15:
+  version "0.4.15"
+  resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
 
 iconv-lite@0.4.18:
   version "0.4.18"
@@ -4254,6 +4317,14 @@ raw-body@^2.1.0:
     iconv-lite "0.4.18"
     unpipe "1.0.0"
 
+raw-body@~2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.2.0.tgz#994976cf6a5096a41162840492f0bdc5d6e7fb96"
+  dependencies:
+    bytes "2.4.0"
+    iconv-lite "0.4.15"
+    unpipe "1.0.0"
+
 rc@^1.1.7:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.1.tgz#2e03e8e42ee450b8cb3dce65be1bf8974e1dfd95"
@@ -5207,7 +5278,7 @@ uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
-uuid@^3.0.0:
+uuid@^3.0.0, uuid@^3.0.1:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 

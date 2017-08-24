@@ -3,7 +3,7 @@ const objectID = mongoose.Schema.Types.ObjectId;
 
 const performanceSchema = new mongoose.Schema({
   // type of perf (ex: 100m)
-  field: String,
+  field: {type: String, unique: true},
   // list of top 3 athletes for this perf
   athletes: [{type: objectID, ref: 'Athlete'}]
 });

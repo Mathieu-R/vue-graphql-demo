@@ -9,4 +9,6 @@ const athleteSchema = new mongoose.Schema({
   pb: [{field: String, perf: Number}]
 });
 
+athleteSchema.index({firstname: 1, lastname: 1}, {unique: true});
+
 module.exports = mongoose.model('Athlete', athleteSchema);

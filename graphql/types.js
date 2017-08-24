@@ -11,7 +11,7 @@ const typeDefs = `
     country: String!
     birth: Date!
     sb: [Perf]
-    pb: [Date]
+    pb: [Perf]
   }
   type Performances {
     _id: ID!

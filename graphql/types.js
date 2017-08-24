@@ -22,7 +22,7 @@ const typeDefs = `
     athletes: [Athlete]
     performances: [Performances]
     athlete(firstname: String!, lastname: String!): Athlete
-    performances(field: String!): Performances
+    performance(field: String!): Performances
   }
 `;
 

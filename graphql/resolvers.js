@@ -19,11 +19,11 @@ const resolvers = {
 
     },
     athlete(root, {firstname, lastname}) {
-      return athleteModel.find({firstname, lastname});
+      return athleteModel.findOne({firstname, lastname});
     },
     performance(root, {field}) {
       return performanceModel
-        .find({field})
+        .findOne({field})
         .populate('athletes')
         .exec();
     }

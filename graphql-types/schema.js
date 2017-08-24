@@ -25,9 +25,7 @@ const schema = new GraphQLSchema({
           }
         },
         resolve (root, {firstname, lastname}, options) {
-          return athleteModel.find({firstname, lastname})
-            .then(athlete => athlete)
-            .catch(err => console.log(err));
+          return athleteModel.find({firstname, lastname});
         }
       },
       performancesOfTheYear: {
@@ -41,13 +39,12 @@ const schema = new GraphQLSchema({
           return performanceModel
             .find({field})
             .populate('athletes')
-            .exec()
-            .then(performance => performance)
-            .catch(err => console.log(err));
+            .exec();
         }
       }
     })
-  })
+  }),
+  types: [athleteType, performanceType]
 });
 
 module.exports = schema;

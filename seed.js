@@ -103,12 +103,12 @@ Athlete.insertMany(athletes).then(athls => {
     return acc;
   }, {});
 
-  console.log(perfsOfTheYear);
-
   for (const perf in perfsOfTheYear) {
     const p = new Performance({'field': perf, 'athletes': perfsOfTheYear[perf]});
     p.save().catch(err => console.log(err));
   }
+
+  process.exit(0);
 }).catch(err => console.log(err));
 
-process.exit(0);
+

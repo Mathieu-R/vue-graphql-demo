@@ -21,7 +21,7 @@ const resolvers = {
     athlete(root, {firstname, lastname}) {
       return athleteModel.find({firstname, lastname});
     },
-    performances(root, {field}) {
+    performance(root, {field}) {
       return performanceModel
         .find({field})
         .populate('athletes')
